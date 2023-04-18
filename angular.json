@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "woroniecki-pawel-pr-08": {
+    "woroniecki-pawel-pr08": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/woroniecki-pawel-pr-08",
+            "outputPath": "dist/",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -25,6 +25,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -60,10 +61,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "woroniecki-pawel-pr-08:build:production"
+              "browserTarget": "woroniecki-pawel-pr08:build:production"
             },
             "development": {
-              "browserTarget": "woroniecki-pawel-pr-08:build:development"
+              "browserTarget": "woroniecki-pawel-pr08:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +72,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "woroniecki-pawel-pr-08:build"
+            "browserTarget": "woroniecki-pawel-pr08:build"
           }
         },
         "test": {
@@ -94,5 +95,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "b4ad9e76-4b8c-4113-81f6-dab63049201c"
   }
 }
