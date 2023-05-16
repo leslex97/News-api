@@ -1,11 +1,12 @@
-<div class="alert alert-primary" role="alert">
-  Aplikacja Angular wraz z Bootstrap!
-  </div>
-
-
-<nav>
-  <div class="navItem">Strona Główna</div>
-  <div class="navItem">newsy</div>
-  <div class="navItem">komentarze</div>
-  <div class="navItem">Dodaj Newsa</div>
-</nav>
+<app-menu (activateMenuItemEvent)="onActivateMenuItem($event)"></app-menu>
+<container-element [ngSwitch]="activeMenuItem">
+<app-home *ngSwitchCase="'START'"></app-home>
+<app-news-list *ngSwitchCase="'NEWS_LIST'"></app-news-list>
+<app-edit-news *ngSwitchCase="'ADD_NEWS'"></app-edit-news>
+<ng-container *ngSwitchCase="'ADMIN'">
+<span>TODO: Administracja</span>
+</ng-container>
+<app-home *ngSwitchDefault>
+</app-home>
+</container-element>
+<router-outlet></router-outlet>

@@ -1,0 +1,42 @@
+
+
+nav{
+    
+    background-color: rgb(15, 60, 97);
+    place-content: end;
+    color:aliceblue;
+
+}
+
+
+.navItem{
+    
+    margin-right: 3%;
+    padding:1% 1% 1% 1%;
+    font-size: 20px;
+    
+}
+
+.dropdown{
+    display:none;
+    float:right;
+    padding-right: 3%;
+}
+#dropdownMenuButton1{
+    height: 80px;
+    width: 170px;
+    background-color: rgb(15, 60, 97);
+}
+
+
+
+@media(max-width:860px){
+    .row{
+        display: grid;
+        position:relative;
+    }
+    .dropdown{
+        background-color:  rgb(219, 219, 219);;
+        display:block !important;
+    }
+}

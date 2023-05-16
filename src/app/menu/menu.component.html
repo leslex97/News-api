@@ -1,0 +1,39 @@
+
+<nav class="navbar nav col-12">
+  <li *ngIf="userIsAdmin" class="nav-item" [class.active]="menuAdminIsActive" (click)="activateMenuItem('ADMIN')">
+    <a class="nav-link" href="#">Administracja</a>
+    </li>
+    <li class="navItem " [class.active]="menuStartIsActive" (click)="activateMenuItem('START')" >
+      <a class="nav-link" href="#Main">Strona Główna</a>
+    </li>
+    <li class="navItem" [class.active]="menuNewsListIsActive" (click)="activateMenuItem('NEWS_LIST')">
+      <a class="nav-link" href="#Main">Najnowsze wiadomości</a>
+    </li>
+    <li class="navItem" [class.active]="menuAddNewsIsActive" (click)="activateMenuItem('ADD_NEWS')">
+      <a class="nav-link" href="#Main">Dodaj newsa</a>
+    </li>
+    <li class="navItem" [class.active]="menuLoginIsActive" (click)="activateMenuItem('LOGIN')">
+      <a class="nav-link" href="#Main">Zaloguj się </a>
+    </li>
+  </nav>
+  
+  <div ngbDropdown class="dropdown col-12">
+    <button
+      ngbDropdownToggle
+      class="btn btn-secondary"
+      type="button"
+      id="dropdownMenuButton1"
+      aria-expanded="false"
+    >
+      Menu
+    </button>
+    <ul ngbDropdownMenu aria-labelledby="dropdownMenuButton1">
+      <li><a ngbDropdownItem href="#">Strona Główna</a></li>
+      <li><a ngbDropdownItem href="#">newsy</a></li>
+      <li><a ngbDropdownItem href="#">komentarze</a></li>
+      <li><a ngbDropdownItem href="#">Dodaj Newsa</a></li>
+    </ul>
+  </div>
+  <span class="navbar-text">
+    Użytkownik ({{userName}})
+    </span>
