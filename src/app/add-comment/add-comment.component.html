@@ -1,0 +1,24 @@
+<body>
+  <form class="col-12" #createCommentForm="ngForm" (ngSubmit)="addComment()">
+    <div class="col-xs-1 p-5" style="width: 95%">
+      <div class="form-group">
+        <label for="comment" class="h3">Komentarz</label>
+        <textarea
+          class="form-control mt-3"
+          id="comment"
+          name="comment"
+          [(ngModel)]="commentItem.content"
+          required
+          minlength="1"
+          rows="3"
+          placeholder="Podaj komentarz"
+        ></textarea>
+        <div class="d-flex justify-content-center" id="buttons">
+          <button type="submit" class="btn btn-primary col-2 m-1 mt-3">
+            Zapisz
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</body>

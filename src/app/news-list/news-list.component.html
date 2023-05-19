@@ -1,1 +1,56 @@
-<p>news-list works!</p>
+<div class="card p2" style="width: 100%">
+  <div class="card-body">
+    <h5 class="card-title">Lista newsów</h5>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Lp.</th>
+          <th scope="col">Nagłówek</th>
+          <th scope="col">Tytuł</th>
+          <th scope="col">Autor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let newsItem of newsItemsList; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ newsItem.header }}</td>
+          <td>{{ newsItem.title }}</td>
+          <td>{{ newsItem.author }}</td>
+          <td>
+            <a
+              [routerLink]=""
+              style="color: blue"
+              (click)="showDetails(newsItem)"
+              >Szczegóły</a
+            >
+          </td>
+          <td>
+            <a routerLink="/comment/add/{{ newsItem.id }}">Dodaj komentarz</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div>
+      
+      <div *ngFor="let commentItem of commentItemsList; let i = index">
+        <h3 class="card-title pt-5">
+          Komentarze do newsa ({{ newsItemsList[commentItem.newsId].title }})
+        </h3>
+        <div class="comment alert alert-success col-4">
+          <span> {{ commentItem.author }}:{{ commentItem.content }}</span>
+          
+          <div *ngIf="commentItem.isEmpty == false;">
+          <button
+            class="btn btn-danger position-absolute top-0 start-100 p-3 col-2"
+            style="margin-left: 1%"
+            (click)="deleteComment(commentItem)"
+          >
+            Usuń
+          </button>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
